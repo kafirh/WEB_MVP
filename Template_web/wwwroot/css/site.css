@@ -1,22 +1,116 @@
+/* Global Styles */
 html {
-  font-size: 14px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    min-height: 100%;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+    html {
+        font-size: 16px;
+    }
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: #f9f9f9;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #50C878 !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    justify-content: space-between; /* Menyusun elemen navbar secara horizontal */
+}
+
+.navbar-brand {
+    color: white !important;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+    .navbar-brand:hover {
+        color: #e0f7fa !important; /* Efek hover pada brand */
+        transform: scale(1.05); /* Efek zoom kecil */
+    }
+
+.navbar-nav .nav-link {
+    color: white !important;
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+    .navbar-nav .nav-link:hover {
+        color: #e0f7fa !important; /* Warna teks saat hover */
+        text-decoration: none;
+    }
+
+    .navbar-nav .nav-link::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 3px;
+        background-color: #e0f7fa; /* Warna garis bawah */
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: width 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover::after {
+        width: 100%; /* Garis bawah penuh saat hover */
+    }
+
+    .navbar-nav .nav-link.active {
+        color: #e0f7fa !important; /* Warna teks untuk link aktif */
+    }
+
+        .navbar-nav .nav-link.active::after {
+            width: 100%; /* Garis bawah penuh untuk link aktif */
+        }
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler {
+    border: none;
+    transition: all 0.3s ease;
+}
+
+    .navbar-toggler:hover {
+        transform: scale(1.1); /* Efek zoom kecil saat hover */
+    }
+
+/* Main Content */
+.container {
+    padding-top: 20px;
+}
+
+main {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Buttons and Inputs */
+.btn-primary {
+    background-color: #50C878;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+    .btn-primary:hover {
+        background-color: #3cb371;
+    }
+
+.form-control:focus {
+    border-color: #50C878;
+    box-shadow: 0 0 0 0.2rem rgba(80, 200, 120, 0.25);
 }
